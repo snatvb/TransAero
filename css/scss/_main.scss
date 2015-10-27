@@ -1,0 +1,128 @@
+//@import "mixins";
+main{
+  margin-bottom: 30px;
+}
+.b-container-forslider{
+  margin-left: auto;
+  margin-right: auto;
+  @media (min-width: 700px) {
+    width: 700px;
+  }
+  @media (min-width: 1101px) {
+    width: 1100px;
+  }
+}
+.b-slider{
+  margin-top: 30px;
+  position: relative;
+  .e-slide{
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transition: all .25s ease-in-out;
+    &.active{
+      opacity: 1;
+    }
+    @media (min-width: 700px) {
+      height: 275px;
+    }
+    @media (min-width: 1101px) {
+      height: 435px;
+    }
+    overflow: hidden;
+    width: 100%;
+  }
+  .b-buttons{
+    position: absolute;
+    top: 50%;
+    height: 60px;
+    width: 100%;
+    margin-top: -30px;
+    .e-btn{
+      position: absolute;
+      background: url("../i/slider_sprite.png") no-repeat;
+      width: 31px;
+      height: 60px;
+      &:hover{
+        opacity: 0.7;
+      }
+    }
+    .e-btn__left{
+      left: 20px;
+    }
+    .e-btn__right{
+      right: 20px;
+      background-position: -30px 0;
+    }
+  }
+  .b-slider-container{
+    position: relative;
+    background: #fff;
+    @media (min-width: 700px) {
+      height: 275px;
+    }
+    @media (min-width: 1101px) {
+      height: 435px;
+    }
+    &:after{
+      position: absolute;
+      display: block;
+      width: 96%;
+      height: 6px;
+      background-color: #000;
+      content: "";
+      bottom: -5px;
+      opacity: .7;
+      left: 2%;
+      z-index: -1;
+    }
+    &:before{
+      position: absolute;
+      display: block;
+      width: 92%;
+      height: 11px;
+      background-color: #000;
+      content: "";
+      bottom: -10px;
+      opacity: .7;
+      left: 4%;
+      z-index: -1;
+    }
+    .b-text{
+      position: absolute;
+      @media (min-width: 700px) {
+        bottom: 40px;
+        left: 90px;
+      }
+      @media (min-width: 1101px) {
+        bottom: 70px;
+        left: 150px;
+      }
+      font-family: 'HeliosThinC', 'PT Sans', 'Arial', 'Helvetica' 'sans-serif';
+      font-size: 14px;
+      .e-plane{
+        position: relative;
+        top: -35px;
+      }
+      .e-first-text{
+        @media (min-width: 700px) {
+          font-size: 32px;
+        }
+        @media (min-width: 1101px) {
+          font-size: 48px;
+        }
+      }
+      .e-two-text{
+        @media (min-width: 700px) {
+          font-size: 48px;
+        }
+        @media (min-width: 1101px) {
+          font-size: 76px;
+        }
+      }
+      &.b-text__white{
+        color: #fff;
+      }
+    }
+  }
+}
